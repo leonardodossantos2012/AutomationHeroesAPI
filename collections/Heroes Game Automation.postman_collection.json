@@ -1,0 +1,1376 @@
+{
+	"info": {
+		"_postman_id": "4b912b9e-a308-4e75-8292-e5cd760935c0",
+		"name": "Heroes Game Automation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13380164"
+	},
+	"item": [
+		{
+			"name": "Cenários - Criação de um herói",
+			"item": [
+				{
+					"name": "Validação de cenários com status 400 e 401",
+					"item": [
+						{
+							"name": "Cenários sem os campos obrigatórios",
+							"item": [
+								{
+									"name": "Após efetuar uma requisição sem o atributo \"name\" no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Name is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição sem o atributo \"skill\" no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição sem o atributo \"power\" no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills -> Power is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição sem o atributo \"combate\" no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills -> Combat is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cenários com os valores vazios no body",
+							"item": [
+								{
+									"name": "Após efetuar uma requisição com o atributo \"name\" vazio no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Name is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição com o atributo power vazio no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills -> Power is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": \"\",\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição com o atributo velocity vazio no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills -> Velocity is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": \"\",\r\n        \"combate\": 99\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição com o atributo combate vazio no body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Skills -> Combat is empty\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": 10,\r\n        \"combate\": \"\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cenários das regras de negócios",
+							"item": [
+								{
+									"name": "Após efetuar uma requisição passando um valor no \"power, velocity, combat\" maior que 200",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Retornando menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"power value greater than 200\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": 201,\r\n        \"velocity\": 201,\r\n        \"combat\": 201\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição passando um valor no \"power, velocity, combat\" menor que 0",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Retornando menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"power value less than 0\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": -10,\r\n        \"velocity\": -10,\r\n        \"combat\": -10\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Após efetuar uma requisição com um nome já gravado anteriormente",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"/// Cria um nome primeiro\r",
+													"pm.globals.set('heroeName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+													"var heroeName = pm.globals.get('heroeName')\r",
+													"\r",
+													"// Efetua o request gravando o nome criado\r",
+													"pm.sendRequest({\r",
+													"    url: pm.environment.get(\"host\") + '/heroes',\r",
+													"    method: 'POST',\r",
+													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({ \"name\": heroeName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 401\", function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Retornando menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"This hero already exists\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"power\": -10,\r\n        \"velocity\": -10,\r\n        \"combat\": -10\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "StartFragment\n\n1 - Each skill has a maximum value of 200 and a minimum value of 0 (zero)\n\nEndFragment\n\n2 - Not have a common name of another hero to carry out a battle."
+						}
+					]
+				},
+				{
+					"name": "Validação de cenários com status 200",
+					"item": [
+						{
+							"name": "POST",
+							"item": [
+								{
+									"name": "Criar um herói com sucesso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar o NAME\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    console.log(\"agoravai\", jsonData.name)\r",
+													"    pm.expect(jsonData.name).to.eql(pm.variables.get('heroeName'));\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar os skills\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    console.log(\"agoravai\", jsonData.name)\r",
+													"    pm.expect(jsonData.skills.power).to.eql(200);\r",
+													"    pm.expect(jsonData.skills.velocity).to.eql(190);\r",
+													"    pm.expect(jsonData.skills.combat).to.eql(14);   \r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": 0,\r\n        \"velocity\": 190,\r\n        \"combat\": 14\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retornar o json schema valido",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
+													"    \"$ref\": \"#/definitions/Welcome3\",\r",
+													"    \"definitions\": {\r",
+													"        \"Welcome3\": {\r",
+													"            \"type\": \"object\",\r",
+													"            \"additionalProperties\": false,\r",
+													"            \"properties\": {\r",
+													"                \"id\": {\r",
+													"                    \"type\": \"string\",\r",
+													"                    \"format\": \"uuid\"\r",
+													"                },\r",
+													"                \"name\": {\r",
+													"                    \"type\": \"string\"\r",
+													"                },\r",
+													"                \"skills\": {\r",
+													"                    \"$ref\": \"#/definitions/Skills\"\r",
+													"                }\r",
+													"            },\r",
+													"            \"required\": [\r",
+													"                \"id\",\r",
+													"                \"name\",\r",
+													"                \"skills\"\r",
+													"            ],\r",
+													"            \"title\": \"Welcome3\"\r",
+													"        },\r",
+													"        \"Skills\": {\r",
+													"            \"type\": \"object\",\r",
+													"            \"additionalProperties\": false,\r",
+													"            \"properties\": {\r",
+													"                \"power\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                },\r",
+													"                \"velocity\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                },\r",
+													"                \"combat\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                }\r",
+													"            },\r",
+													"            \"required\": [\r",
+													"                \"combat\",\r",
+													"                \"power\",\r",
+													"                \"velocity\"\r",
+													"            ],\r",
+													"            \"title\": \"Skills\"\r",
+													"        }\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"pm.test(\"Deve retornar status code 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test('Deve retornar uma resposta com Schema válido', function ()\r",
+													"{\r",
+													"var jsonData = pm.response.json();\r",
+													"pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": 200,\r\n        \"velocity\": 190,\r\n        \"combat\": 14\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "GET",
+							"item": [
+								{
+									"name": "Validar retorno de status 200 e jsonschema do contrato da API",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const schema = {\r",
+													"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
+													"    \"type\": \"array\",\r",
+													"    \"items\": {\r",
+													"        \"$ref\": \"#/definitions/Welcome4Element\"\r",
+													"    },\r",
+													"    \"definitions\": {\r",
+													"        \"Welcome4Element\": {\r",
+													"            \"type\": \"object\",\r",
+													"            \"additionalProperties\": false,\r",
+													"            \"properties\": {\r",
+													"                \"id\": {\r",
+													"                    \"type\": \"string\"\r",
+													"                },\r",
+													"                \"name\": {\r",
+													"                    \"type\": \"string\"\r",
+													"                },\r",
+													"                \"skills\": {\r",
+													"                    \"$ref\": \"#/definitions/Skills\"\r",
+													"                }\r",
+													"            },\r",
+													"            \"required\": [\r",
+													"                \"id\",\r",
+													"                \"name\",\r",
+													"                \"skills\"\r",
+													"            ],\r",
+													"            \"title\": \"Welcome4Element\"\r",
+													"        },\r",
+													"        \"Skills\": {\r",
+													"            \"type\": \"object\",\r",
+													"            \"additionalProperties\": false,\r",
+													"            \"properties\": {\r",
+													"                \"power\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                },\r",
+													"                \"velocity\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                },\r",
+													"                \"combat\": {\r",
+													"                    \"type\": \"integer\"\r",
+													"                }\r",
+													"            },\r",
+													"            \"required\": [\r",
+													"                \"combat\",\r",
+													"                \"power\",\r",
+													"                \"velocity\"\r",
+													"            ],\r",
+													"            \"title\": \"Skills\"\r",
+													"        }\r",
+													"    }\r",
+													"}\r",
+													"\r",
+													"\r",
+													"pm.test(\"Deve retornar status code 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test('Deve retornar uma resposta com Schema válido', function ()\r",
+													"{\r",
+													"var jsonData = pm.response.json();\r",
+													"pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{host}}/heroes",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Validação de cenários de regra de negócio",
+							"item": [
+								{
+									"name": "Validar se retorna o herói que pode ganhar e o que pode perder corretamente",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Deve retornar o status 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"O vencedor é a/o: \" + pm.variables.get('jsonBodyNameWiner'), function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.winner).to.eql(pm.variables.get('jsonBodyNameWiner'));\r",
+													"});\r",
+													"\r",
+													"pm.test(\"O perdedor é a/o: \" + pm.variables.get('jsonBodyNameLoser'), function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.loser).to.eql(pm.variables.get('jsonBodyNameLoser'));\r",
+													"});\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"/// Cria um nome primeiro\r",
+													"pm.globals.set('heroeLoserName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+													"var heroeLoserName = pm.globals.get('heroeLoserName')\r",
+													"\r",
+													"pm.globals.set('heroeWinnerName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+													"var heroeWinnerName = pm.globals.get('heroeWinnerName')\r",
+													"\r",
+													"\r",
+													"//cria herói perdedor\r",
+													"pm.sendRequest({\r",
+													"    url: pm.environment.get(\"host\") + '/heroes',\r",
+													"    method: 'POST',\r",
+													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({ \"name\": heroeLoserName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    jsonBodyId = res.json().id\r",
+													"    jsonBodyNameLoser = res.json().name\r",
+													"\r",
+													"    pm.globals.set('jsonBodyIdLoser', jsonBodyId);\r",
+													"    pm.globals.set('jsonBodyNameLoser', jsonBodyNameLoser);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"\r",
+													"// cria herói ganhador\r",
+													"pm.sendRequest({\r",
+													"    url: pm.environment.get(\"host\") + '/heroes',\r",
+													"    method: 'POST',\r",
+													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 100, \"velocity\": 100, \"combat\": 100 } })\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    jsonBodyIdWinner = res.json().id\r",
+													"    jsonBodyNameWiner = res.json().name\r",
+													"\r",
+													"    pm.globals.set('jsonBodyIdWinner', jsonBodyIdWinner);\r",
+													"    pm.globals.set('jsonBodyNameWiner', jsonBodyNameWiner);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes/battle",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes",
+												"battle"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Validar se retorna um empate quando os skills dos heróis de batalha forem iguais",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"winnerName = pm.globals.get('jsonBodyNameWiner')\r",
+													"loserName = pm.globals.get('jsonBodyNameLoser')\r",
+													"\r",
+													"pm.test(\"Deve retornar o status 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Deve retornar empate\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.message).to.eql(winnerName + ' and ' + loserName + ' have the same power');\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"/// Cria um nome primeiro\r",
+													"pm.globals.set('heroeLoserName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+													"var heroeLoserName = pm.globals.get('heroeLoserName')\r",
+													"\r",
+													"pm.globals.set('heroeWinnerName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+													"var heroeWinnerName = pm.globals.get('heroeWinnerName')\r",
+													"\r",
+													"\r",
+													"//cria herói perdedor\r",
+													"pm.sendRequest({\r",
+													"    url: pm.environment.get(\"host\") + '/heroes',\r",
+													"    method: 'POST',\r",
+													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({ \"name\": heroeLoserName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    jsonBodyId = res.json().id\r",
+													"    jsonBodyNameLoser = res.json().name\r",
+													"\r",
+													"    pm.globals.set('jsonBodyIdLoser', jsonBodyId);\r",
+													"    pm.globals.set('jsonBodyNameLoser', jsonBodyNameLoser);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"\r",
+													"// cria herói ganhador\r",
+													"pm.sendRequest({\r",
+													"    url: pm.environment.get(\"host\") + '/heroes',\r",
+													"    method: 'POST',\r",
+													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    jsonBodyIdWinner = res.json().id\r",
+													"    jsonBodyNameWiner = res.json().name\r",
+													"    \r",
+													"    pm.globals.set('jsonBodyIdWinner', jsonBodyIdWinner);\r",
+													"    pm.globals.set('jsonBodyNameWiner', jsonBodyNameWiner);\r",
+													"\r",
+													"    console.log(\"teste 2\", jsonBodyNameWiner)\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{token}}",
+												"type": "text"
+											},
+											{
+												"key": "",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/heroes/battle",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"heroes",
+												"battle"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var url = pm.environment.get(\"host\")+'/auth';",
+					"",
+					"pm.sendRequest({",
+					"    url: url,",
+					"    method: 'POST',",
+					"    header: {",
+					"        'content-Type': 'application/x-www-form-urlencdoded',",
+					"        'x-app-id': pm.environment.get(\"x-app-id\")",
+					"    }",
+					"},",
+					"    function (err, response) {",
+					"        var response = response.json();",
+					"        pm.globals.set(\"token\", response.token);",
+					"    });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
