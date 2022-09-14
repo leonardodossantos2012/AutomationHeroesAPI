@@ -59,3 +59,9 @@ Bug 4 - Não grava quando um queremos criar um herói que tenha alguma skill = 0
 
 ### Rodando a collection
 Para rodar a automação basta baixar a collection e a váriavel de ambiente do projeto e importar dentro do próprio postman
+
+
+https://user-images.githubusercontent.com/35806393/190023987-f7cdd311-f193-4dc4-b053-72f441f2cd54.mp4
+
+
+
