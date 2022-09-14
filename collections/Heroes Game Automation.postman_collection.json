@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4b912b9e-a308-4e75-8292-e5cd760935c0",
+		"_postman_id": "e51d06d9-5214-4087-92a2-282c3b16f232",
 		"name": "Heroes Game Automation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "13380164"
+		"_exporter_id": "21020550"
 	},
 	"item": [
 		{
@@ -45,7 +45,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -143,7 +143,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -246,7 +246,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -295,7 +295,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": \"\",\r\n        \"velocity\": 15,\r\n        \"combate\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": \"\",\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -344,7 +344,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": \"\",\r\n        \"combate\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": \"\",\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -393,7 +393,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": 10,\r\n        \"combate\": \"\"\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": 10,\r\n        \"combat\": \"\"\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -817,7 +817,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": 0,\r\n        \"velocity\": 190,\r\n        \"combat\": 14\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\", \r\n    \"skills\": {\r\n        \"power\": 200,\r\n        \"velocity\": 190,\r\n        \"combat\": 14\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -997,134 +997,376 @@
 									"response": []
 								}
 							]
-						},
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cenários - Lista heróis",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
 						{
-							"name": "GET",
-							"item": [
+							"name": "Validar retorno de status 200 e jsonschema do contrato da API",
+							"event": [
 								{
-									"name": "Validar retorno de status 200 e jsonschema do contrato da API",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const schema = {\r",
-													"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
-													"    \"type\": \"array\",\r",
-													"    \"items\": {\r",
-													"        \"$ref\": \"#/definitions/Welcome4Element\"\r",
-													"    },\r",
-													"    \"definitions\": {\r",
-													"        \"Welcome4Element\": {\r",
-													"            \"type\": \"object\",\r",
-													"            \"additionalProperties\": false,\r",
-													"            \"properties\": {\r",
-													"                \"id\": {\r",
-													"                    \"type\": \"string\"\r",
-													"                },\r",
-													"                \"name\": {\r",
-													"                    \"type\": \"string\"\r",
-													"                },\r",
-													"                \"skills\": {\r",
-													"                    \"$ref\": \"#/definitions/Skills\"\r",
-													"                }\r",
-													"            },\r",
-													"            \"required\": [\r",
-													"                \"id\",\r",
-													"                \"name\",\r",
-													"                \"skills\"\r",
-													"            ],\r",
-													"            \"title\": \"Welcome4Element\"\r",
-													"        },\r",
-													"        \"Skills\": {\r",
-													"            \"type\": \"object\",\r",
-													"            \"additionalProperties\": false,\r",
-													"            \"properties\": {\r",
-													"                \"power\": {\r",
-													"                    \"type\": \"integer\"\r",
-													"                },\r",
-													"                \"velocity\": {\r",
-													"                    \"type\": \"integer\"\r",
-													"                },\r",
-													"                \"combat\": {\r",
-													"                    \"type\": \"integer\"\r",
-													"                }\r",
-													"            },\r",
-													"            \"required\": [\r",
-													"                \"combat\",\r",
-													"                \"power\",\r",
-													"                \"velocity\"\r",
-													"            ],\r",
-													"            \"title\": \"Skills\"\r",
-													"        }\r",
-													"    }\r",
-													"}\r",
-													"\r",
-													"\r",
-													"pm.test(\"Deve retornar status code 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"pm.test('Deve retornar uma resposta com Schema válido', function ()\r",
-													"{\r",
-													"var jsonData = pm.response.json();\r",
-													"pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "x-access-token",
-												"value": "{{token}}",
-												"type": "text"
-											}
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const schema = {\r",
+											"    \"$schema\": \"http://json-schema.org/draft-06/schema#\",\r",
+											"    \"type\": \"array\",\r",
+											"    \"items\": {\r",
+											"        \"$ref\": \"#/definitions/Welcome4Element\"\r",
+											"    },\r",
+											"    \"definitions\": {\r",
+											"        \"Welcome4Element\": {\r",
+											"            \"type\": \"object\",\r",
+											"            \"additionalProperties\": false,\r",
+											"            \"properties\": {\r",
+											"                \"id\": {\r",
+											"                    \"type\": \"string\"\r",
+											"                },\r",
+											"                \"name\": {\r",
+											"                    \"type\": \"string\"\r",
+											"                },\r",
+											"                \"skills\": {\r",
+											"                    \"$ref\": \"#/definitions/Skills\"\r",
+											"                }\r",
+											"            },\r",
+											"            \"required\": [\r",
+											"                \"id\",\r",
+											"                \"name\",\r",
+											"                \"skills\"\r",
+											"            ],\r",
+											"            \"title\": \"Welcome4Element\"\r",
+											"        },\r",
+											"        \"Skills\": {\r",
+											"            \"type\": \"object\",\r",
+											"            \"additionalProperties\": false,\r",
+											"            \"properties\": {\r",
+											"                \"power\": {\r",
+											"                    \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"velocity\": {\r",
+											"                    \"type\": \"integer\"\r",
+											"                },\r",
+											"                \"combat\": {\r",
+											"                    \"type\": \"integer\"\r",
+											"                }\r",
+											"            },\r",
+											"            \"required\": [\r",
+											"                \"combat\",\r",
+											"                \"power\",\r",
+											"                \"velocity\"\r",
+											"            ],\r",
+											"            \"title\": \"Skills\"\r",
+											"        }\r",
+											"    }\r",
+											"}\r",
+											"\r",
+											"\r",
+											"pm.test(\"Deve retornar status code 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test('Deve retornar uma resposta com Schema válido', function ()\r",
+											"{\r",
+											"var jsonData = pm.response.json();\r",
+											"pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+											"});\r",
+											""
 										],
-										"url": {
-											"raw": "{{host}}/heroes",
-											"host": [
-												"{{host}}"
-											],
-											"path": [
-												"heroes"
-											]
-										}
-									},
-									"response": []
+										"type": "text/javascript"
+									}
 								}
-							]
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/heroes",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"heroes"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cenários - Batalha entre heróis",
+			"item": [
+				{
+					"name": "Validação de cenários de regra de negócio",
+					"item": [
+						{
+							"name": "Validar se retorna o herói que pode ganhar e o que pode perder corretamente",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Deve retornar o status 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"O vencedor é a/o: \" + pm.variables.get('jsonBodyNameWiner'), function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.winner).to.eql(pm.variables.get('jsonBodyNameWiner'));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"O perdedor é a/o: \" + pm.variables.get('jsonBodyNameLoser'), function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.loser).to.eql(pm.variables.get('jsonBodyNameLoser'));\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/// Cria um nome primeiro\r",
+											"pm.globals.set('heroeLoserName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+											"var heroeLoserName = pm.globals.get('heroeLoserName')\r",
+											"\r",
+											"pm.globals.set('heroeWinnerName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+											"var heroeWinnerName = pm.globals.get('heroeWinnerName')\r",
+											"\r",
+											"\r",
+											"//cria herói perdedor\r",
+											"pm.sendRequest({\r",
+											"    url: pm.environment.get(\"host\") + '/heroes',\r",
+											"    method: 'POST',\r",
+											"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ \"name\": heroeLoserName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    jsonBodyId = res.json().id\r",
+											"    jsonBodyNameLoser = res.json().name\r",
+											"\r",
+											"    pm.globals.set('jsonBodyIdLoser', jsonBodyId);\r",
+											"    pm.globals.set('jsonBodyNameLoser', jsonBodyNameLoser);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"// cria herói ganhador\r",
+											"pm.sendRequest({\r",
+											"    url: pm.environment.get(\"host\") + '/heroes',\r",
+											"    method: 'POST',\r",
+											"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 100, \"velocity\": 100, \"combat\": 100 } })\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    jsonBodyIdWinner = res.json().id\r",
+											"    jsonBodyNameWiner = res.json().name\r",
+											"\r",
+											"    pm.globals.set('jsonBodyIdWinner', jsonBodyIdWinner);\r",
+											"    pm.globals.set('jsonBodyNameWiner', jsonBodyNameWiner);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/heroes/battle",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"heroes",
+										"battle"
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"name": "Validação de cenários de regra de negócio",
+							"name": "Validar se retorna um empate quando os skills dos heróis de batalha forem iguais",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"winnerName = pm.globals.get('jsonBodyNameWiner')\r",
+											"loserName = pm.globals.get('jsonBodyNameLoser')\r",
+											"\r",
+											"pm.test(\"Deve retornar o status 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Deve retornar empate\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message).to.eql(winnerName + ' and ' + loserName + ' have the same power');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"/// Cria um nome primeiro\r",
+											"pm.globals.set('heroeLoserName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+											"var heroeLoserName = pm.globals.get('heroeLoserName')\r",
+											"\r",
+											"pm.globals.set('heroeWinnerName', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+											"var heroeWinnerName = pm.globals.get('heroeWinnerName')\r",
+											"\r",
+											"\r",
+											"//cria herói perdedor\r",
+											"pm.sendRequest({\r",
+											"    url: pm.environment.get(\"host\") + '/heroes',\r",
+											"    method: 'POST',\r",
+											"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ \"name\": heroeLoserName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    jsonBodyId = res.json().id\r",
+											"    jsonBodyNameLoser = res.json().name\r",
+											"\r",
+											"    pm.globals.set('jsonBodyIdLoser', jsonBodyId);\r",
+											"    pm.globals.set('jsonBodyNameLoser', jsonBodyNameLoser);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"\r",
+											"// cria herói ganhador\r",
+											"pm.sendRequest({\r",
+											"    url: pm.environment.get(\"host\") + '/heroes',\r",
+											"    method: 'POST',\r",
+											"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    jsonBodyIdWinner = res.json().id\r",
+											"    jsonBodyNameWiner = res.json().name\r",
+											"    \r",
+											"    pm.globals.set('jsonBodyIdWinner', jsonBodyIdWinner);\r",
+											"    pm.globals.set('jsonBodyNameWiner', jsonBodyNameWiner);\r",
+											"\r",
+											"    console.log(\"teste 2\", jsonBodyNameWiner)\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/heroes/battle",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"heroes",
+										"battle"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Validação de campos obrigatórios",
+					"item": [
+						{
+							"name": "Cenários sem os campos obrigatórios Copy",
 							"item": [
 								{
-									"name": "Validar se retorna o herói que pode ganhar e o que pode perder corretamente",
+									"name": "Após efetuar uma requisição sem o atributo \"hero_id\" no body",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"pm.test(\"Deve retornar o status 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"O vencedor é a/o: \" + pm.variables.get('jsonBodyNameWiner'), function () {\r",
-													"    var jsonData = pm.response.json();\r",
-													"    pm.expect(jsonData.winner).to.eql(pm.variables.get('jsonBodyNameWiner'));\r",
-													"});\r",
-													"\r",
-													"pm.test(\"O perdedor é a/o: \" + pm.variables.get('jsonBodyNameLoser'), function () {\r",
-													"    var jsonData = pm.response.json();\r",
-													"    pm.expect(jsonData.loser).to.eql(pm.variables.get('jsonBodyNameLoser'));\r",
-													"});\r",
-													"\r",
-													"\r",
-													""
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Hero is empty\");\r",
+													"});"
 												],
 												"type": "text/javascript"
 											}
@@ -1190,16 +1432,11 @@
 												"key": "x-access-token",
 												"value": "{{token}}",
 												"type": "text"
-											},
-											{
-												"key": "",
-												"value": "",
-												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+											"raw": "{\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1220,22 +1457,18 @@
 									"response": []
 								},
 								{
-									"name": "Validar se retorna um empate quando os skills dos heróis de batalha forem iguais",
+									"name": "Após efetuar uma requisição sem o atributo \"machine_hero_id\" no body",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"winnerName = pm.globals.get('jsonBodyNameWiner')\r",
-													"loserName = pm.globals.get('jsonBodyNameLoser')\r",
-													"\r",
-													"pm.test(\"Deve retornar o status 200\", function () {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Deve retornar o status 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Deve retornar empate\", function () {\r",
-													"    var jsonData = pm.response.json();\r",
-													"    pm.expect(jsonData.message).to.eql(winnerName + ' and ' + loserName + ' have the same power');\r",
+													"pm.test(\"Deve retornar menssagem de erro correta\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"Machine Hero is empty\");\r",
 													"});"
 												],
 												"type": "text/javascript"
@@ -1279,16 +1512,14 @@
 													"    header: { 'content-type': 'application/json', 'x-access-token': pm.globals.get('token') },\r",
 													"    body: {\r",
 													"        mode: 'raw',\r",
-													"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 1, \"velocity\": 1, \"combat\": 1 } })\r",
+													"        raw: JSON.stringify({ \"name\": heroeWinnerName, \"skills\": { \"power\": 100, \"velocity\": 100, \"combat\": 100 } })\r",
 													"    }\r",
 													"}, function (err, res) {\r",
 													"    jsonBodyIdWinner = res.json().id\r",
 													"    jsonBodyNameWiner = res.json().name\r",
-													"    \r",
+													"\r",
 													"    pm.globals.set('jsonBodyIdWinner', jsonBodyIdWinner);\r",
 													"    pm.globals.set('jsonBodyNameWiner', jsonBodyNameWiner);\r",
-													"\r",
-													"    console.log(\"teste 2\", jsonBodyNameWiner)\r",
 													"});\r",
 													"\r",
 													""
@@ -1304,16 +1535,11 @@
 												"key": "x-access-token",
 												"value": "{{token}}",
 												"type": "text"
-											},
-											{
-												"key": "",
-												"value": "",
-												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\",\r\n    \"machine_hero_id\": \"{{jsonBodyIdLoser}}\"\r\n}",
+											"raw": "{\r\n    \"hero_id\": \"{{jsonBodyIdWinner}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"

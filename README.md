@@ -6,8 +6,7 @@
 
 #### Estrutura da collection
 
-![image](https://user-images.githubusercontent.com/35806393/190012745-35c20cd1-65a4-4e18-a128-03e1ad93a888.png)
-
+![image](https://user-images.githubusercontent.com/35806393/190032212-97e3fbdb-5127-493b-b8e0-080c28946496.png)
 
 ### Explicação do projeto
 
@@ -17,7 +16,7 @@ O projeto tem por objetivo fazer as validações na API conforme o challenge, al
 
 O Postman com certeza é uma das ferramentas mais utilizada pelo o time de desenvolvimento, qualidade e até mesmo de negócio, por sua facilidade de fazer uma validação rápida em uma API. Além desse recurso o postman conta com outros recursos bem bacana, por exemplo, é a criação do mock server!
 
-Porém, mesmo o postman sendo tão bom ele deixa a desejar um pouco quando falamos de boas práticas de automação, por não ser um framework voltado 100% para automação criar cenários e utilizar o gherkin no postman já não é possível, acabamos tendo que replicar muita linha de código, pois pra cada cenário que utilizamos temos que criar uma request.
+Porém, mesmo o postman sendo tão bom ele deixa a desejar um pouco quando falamos de boas práticas de automação, por não ser uma ferramenta voltado 100% para automação criar cenários e utilizar o gherkin no postman já não é possível, acabamos tendo que replicar muita linha de código, pois pra cada cenário que utilizamos temos que criar uma request.
 
 Por exemplo, na collection tem um cenário de testes que fazemos a validação da obrigatoriedade dos campos, onde temos por volta de 4 campos obrigatórios... No postman temos que criar um cenário para cada campo, já no cucumber poderíamos criar um cenário e dentro dele inserirmos um datatable. 
 > 
@@ -62,6 +61,3 @@ Para rodar a automação basta baixar a collection e a váriavel de ambiente do 
 
 
 https://user-images.githubusercontent.com/35806393/190023987-f7cdd311-f193-4dc4-b053-72f441f2cd54.mp4
-
-
-
