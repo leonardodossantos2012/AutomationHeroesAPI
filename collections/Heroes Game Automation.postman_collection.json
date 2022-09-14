@@ -81,6 +81,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -94,7 +147,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\"\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -130,6 +183,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -143,7 +249,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -179,6 +285,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -192,7 +351,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"power\": 66,\r\n        \"velocity\": 15\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -282,6 +441,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -295,7 +507,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": \"\",\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"power\": \"\",\r\n        \"velocity\": 15,\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -331,6 +543,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -344,7 +609,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": \"\",\r\n        \"combat\": 99\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": \"\",\r\n        \"combat\": 99\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -380,6 +645,59 @@
 												],
 												"type": "text/javascript"
 											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: 'https://www.4devs.com.br/ferramentas_online.php',\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-Type': 'application/x-www-form-urlencoded',\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'urlencoded',\r",
+													"        urlencoded: [{\r",
+													"            key: \"acao\",\r",
+													"            value: \"gerar_pessoa\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"sexo\",\r",
+													"            value: \"I\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"pontuacao\",\r",
+													"            value: \"2\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"idade\",\r",
+													"            value: 22,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_estado\",\r",
+													"            value: \"PR\",\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"txt_qtde\",\r",
+													"            value: 1,\r",
+													"            disabled: false\r",
+													"        }, {\r",
+													"            key: \"cep_cidade\",\r",
+													"            value: \"5763\",\r",
+													"            disabled: false\r",
+													"        }\r",
+													"        ]\r",
+													"    }\r",
+													"},\r",
+													"    function (err, response) {\r",
+													"        pm.variables.unset('heroeName')\r",
+													"        var name = response.json();\r",
+													"        pm.globals.set(\"heroeName\", name[0].nome);\r",
+													"    });"
+												],
+												"type": "text/javascript"
+											}
 										}
 									],
 									"request": {
@@ -393,7 +711,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Capitao 123\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": 10,\r\n        \"combat\": \"\"\r\n    }\r\n}",
+											"raw": "{\r\n    \"name\": \"{{heroeName}}\",\r\n    \"skills\": {\r\n        \"power\": 11,\r\n        \"velocity\": 10,\r\n        \"combat\": \"\"\r\n    }\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
